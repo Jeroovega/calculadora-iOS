@@ -65,19 +65,19 @@ function App() {
 
     switch (operacion) {
       case "+":
-        setValor((valorAnteriorFloat + valorFloat).toPrecision(4));
+        setValor((valorAnteriorFloat + valorFloat).toPrecision(7));
         break;
       case "-":
-        setValor((valorAnteriorFloat - valorFloat).toPrecision(4));
+        setValor((valorAnteriorFloat - valorFloat).toPrecision(7));
         break;
       case "*":
-        setValor((valorAnteriorFloat * valorFloat).toPrecision(4));
+        setValor((valorAnteriorFloat * valorFloat).toPrecision(7));
         break;
       case "/":
-        setValor((valorAnteriorFloat / valorFloat).toPrecision(4));
+        setValor((valorAnteriorFloat / valorFloat).toPrecision(7));
         break;
         case "%":
-          setValor(((valorAnterior * valorFloat) / 100).toPrecision(4));
+          setValor(((valorAnterior * valorFloat) / 100).toPrecision(7));
           break;
       default:
         return;
