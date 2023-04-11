@@ -61,7 +61,7 @@ function App() {
       case "+":
         setValor(valorAnteriorFloat + valorFloat);
         if (valor % 1 == 0) {
-          setValor(valor)
+          return
         } else {
           setValor((valorAnteriorFloat + valorFloat).toPrecision(7))
         };
