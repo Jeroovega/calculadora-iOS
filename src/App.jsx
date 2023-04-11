@@ -28,19 +28,19 @@ function App() {
       setValor(valor + numero);
     }
 
-    if(esFlotante){
-          setEsFlotante(false)
-          return;
-      }
-    
+    if (esFlotante) {
+      setEsFlotante(false)
+      return;
+    }
+
   }
-  
-  
+
+
 
 
   const hacerFlotante = () => {
-   setEsFlotante(true) 
-   setValor(valor + ".");
+    setEsFlotante(true)
+    setValor(valor + ".");
   }
 
   function borrar() {
@@ -65,20 +65,45 @@ function App() {
 
     switch (operacion) {
       case "+":
-        setValor((valorAnteriorFloat + valorFloat).toPrecision(7));
+        setValor(valorAnteriorFloat + valorFloat);
+        if (valor % 1 == 0) {
+          return
+        } else {
+          return setValor((valorAnteriorFloat + valorFloat).toPrecision(7))
+        }; 
         break;
       case "-":
-        setValor((valorAnteriorFloat - valorFloat).toPrecision(7));
+        setValor(valorAnteriorFloat - valorFloat);
+        if (valor % 1 == 0) {
+          return
+        } else {
+          return setValor((valorAnteriorFloat - valorFloat).toPrecision(7))
+        }; 
         break;
       case "*":
-        setValor((valorAnteriorFloat * valorFloat).toPrecision(7));
+        setValor(valorAnteriorFloat * valorFloat);
+        if (valor % 1 == 0) {
+          return
+        } else {
+          return setValor((valorAnteriorFloat * valorFloat).toPrecision(7))
+        };        
         break;
       case "/":
-        setValor((valorAnteriorFloat / valorFloat).toPrecision(7));
+        setValor(valorAnteriorFloat / valorFloat);
+        if (valor % 1 == 0) {
+          return
+        } else {
+          return setValor((valorAnteriorFloat / valorFloat).toPrecision(7))
+        }; 
         break;
-        case "%":
-          setValor(((valorAnterior * valorFloat) / 100).toPrecision(7));
-          break;
+      case "%":
+        setValor((valorAnterior * valorFloat) / 100);
+        if (valor % 1 == 0) {
+          return
+        } else {
+          return setValor(((valorAnterior * valorFloat) / 100).toPrecision(7));
+        }; 
+        break;
       default:
         return;
     }
@@ -103,11 +128,11 @@ function App() {
     setValor("");
     setEsNegativo(false);
   }
-  
+
 
   return (
     <div className="bg-[#000000e6]">
-      <div className="flex  justify-center items-center h-screen">
+      <div className="flex flex-col justify-center items-center h-screen">
         <div className="bg-[#000000b3] p-2 pl-3 rounded-2xl">
           <div
             className="text-white  pb-2 pt-5 flex justify-end pr-6 text-3xl w-72 overflow-hidden font-semibold">{valor !== "" ? valor : valorAnterior}
@@ -122,14 +147,14 @@ function App() {
               </button>
             </div>
             <div>
-              <button 
-              onClick={()=> negativoPositivo()}
-              className="bg-[#b9b8b8] rounded-full py-2  text-2xl font-semibold w-16 flex justify-center hover:bg-[#ffffff] transition-all duration-400">+/-</button>
+              <button
+                onClick={() => negativoPositivo()}
+                className="bg-[#b9b8b8] rounded-full py-2  text-2xl font-semibold w-16 flex justify-center hover:bg-[#ffffff] transition-all duration-400">+/-</button>
             </div>
             <div>
-              <button 
-              onClick={() => seleccionarOperacion("%")}
-              className="bg-[#b9b8b8] rounded-full py-2 text-2xl font-semibold w-16 flex justify-center hover:bg-[#ffffff] transition-all duration-400">%</button>
+              <button
+                onClick={() => seleccionarOperacion("%")}
+                className="bg-[#b9b8b8] rounded-full py-2 text-2xl font-semibold w-16 flex justify-center hover:bg-[#ffffff] transition-all duration-400">%</button>
             </div>
             <div>
               <button
@@ -205,9 +230,9 @@ function App() {
                 className="bg-[#151515] rounded-full text-white py-4 text-2xl   w-32 flex justify-start px-5 hover:bg-[#484848] transition-all duration-300">0</button>
             </div>
             <div>
-              <button 
-              onClick={()=> hacerFlotante()}
-              className="bg-[#151515] rounded-full text-white py-4 text-2xl   w-16 flex justify-center hover:bg-[#484848] transition-all duration-300">.</button>
+              <button
+                onClick={() => hacerFlotante()}
+                className="bg-[#151515] rounded-full text-white py-4 text-2xl   w-16 flex justify-center hover:bg-[#484848] transition-all duration-300">.</button>
             </div>
             <div>
               <button
@@ -219,7 +244,11 @@ function App() {
           <div>
 
           </div>
-          <div></div>
+          <div>
+          </div>
+        </div>
+        <div className="flex pt-4">
+          <h3 className="text-white">by<span className="text-[orange] font-semibold"> jerovega</span></h3>
         </div>
       </div>
     </div>
