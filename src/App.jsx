@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-
-
 function App() {
 
   const [valor, setValor] = useState("");
@@ -32,11 +30,7 @@ function App() {
       setEsFlotante(false)
       return;
     }
-
   }
-
-
-
 
   const hacerFlotante = () => {
     setEsFlotante(true)
@@ -67,42 +61,42 @@ function App() {
       case "+":
         setValor(valorAnteriorFloat + valorFloat);
         if (valor % 1 == 0) {
-          return
+          setValor(valor)
         } else {
-          return setValor((valorAnteriorFloat + valorFloat).toPrecision(7))
-        }; 
+          setValor((valorAnteriorFloat + valorFloat).toPrecision(7))
+        };
         break;
       case "-":
         setValor(valorAnteriorFloat - valorFloat);
         if (valor % 1 == 0) {
-          return
+          return 
         } else {
-          return setValor((valorAnteriorFloat - valorFloat).toPrecision(7))
-        }; 
+          setValor((valorAnteriorFloat - valorFloat).toPrecision(7))
+        };
         break;
       case "*":
         setValor(valorAnteriorFloat * valorFloat);
         if (valor % 1 == 0) {
-          return
+          return 
         } else {
-          return setValor((valorAnteriorFloat * valorFloat).toPrecision(7))
-        };        
+          setValor((valorAnteriorFloat * valorFloat).toPrecision(7))
+        };
         break;
       case "/":
         setValor(valorAnteriorFloat / valorFloat);
         if (valor % 1 == 0) {
-          return
+          return 
         } else {
-          return setValor((valorAnteriorFloat / valorFloat).toPrecision(7))
-        }; 
+          setValor((valorAnteriorFloat / valorFloat).toPrecision(7))
+        };
         break;
       case "%":
         setValor((valorAnterior * valorFloat) / 100);
         if (valor % 1 == 0) {
-          return
+          return 
         } else {
-          return setValor(((valorAnterior * valorFloat) / 100).toPrecision(7));
-        }; 
+          setValor(((valorAnterior * valorFloat) / 100).toPrecision(7));
+        };
         break;
       default:
         return;
